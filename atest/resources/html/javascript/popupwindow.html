@@ -17,10 +17,17 @@
                 window.open(href, windowname, 'width=400,height=200,scrollbars=yes');
                 return false;
             }
+            function openCloseAfterDelay() {
+                var popupWindow = window.open("alert.html", 'width=400,height=200,scrollbars=yes');
+                window.setTimeout(function(){
+                    popupWindow.close();
+                },500);
+            }
         </SCRIPT>
     </head>
     <body>
         <A HREF="dynamic_content.html" onClick="return popup(this, 'myName')">my popup</A><br><br>
-        <button onclick="openAfterDelay()" id="MyButton">Click</button>
+        <button onclick="openAfterDelay()" id="MyButton">Click</button><br/>
+        <button onclick="openCloseAfterDelay()" id="MyButton">Self Closing</button>
     </body>
 </html>
